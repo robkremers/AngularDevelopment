@@ -1,0 +1,181 @@
+Date	: 2018-01-27
+Topic	: Study of Typescript.
+
+Sources:
+- Derek Banas:	TypeScript Tutorial
+	- https://www.youtube.com/watch?v=-PR_XqW9JJU&t=1s
+- Programming with Mosh: TypeScript Tutorial for Angular and React Developers
+	- https://www.youtube.com/watch?v=NjN00cM18Z4
+- https://www.typescriptlang.org/docs/handbook/functions.html
+- https://www.tutorialspoint.com/typescript/index.htm
+- General description:
+	- https://vsavkin.com/writing-angular-2-in-typescript-1fa77c78d8e8
+		- READ THIS!
+- https://codecraft.tv/courses/angular/es6-typescript/1/
+	- Series of video's regarding typescript.
+- Techcybo.com: Angular 5 Tutorial - Development Environment - Install Node JS,NPM,Angular CLI,Visual Studio Code| 1
+	- https://www.youtube.com/watch?v=4PycmHqpFRo
+		- Install node.js
+			- https://nodejs.org/en/download
+- Zramlez: How to configure VS Code for developing node.js apps using Typescript 2.x
+	- https://www.youtube.com/watch?v=W0pOhHgPsl4
+- Traversy Media: TypeScript Crash Course
+	- https://www.youtube.com/watch?v=rAy_3SIqT-E
+
+Documentation:
+- http://www.typescriptlang.org/docs/home.html
+
+Software:
+- https://marketplace.eclipse.org/content/typescript-ide
+
+- Installation:
+	- https://nodejs.org
+		- Version: 9.4.0 Current.
+		- Installed: c:\mean\node.js
+- https://www.typescriptlang.org
+
+		
+TypeScript is a superset of JavaScript which primarily provides optional static typing, classes and interfaces. One of the big benefits is to enable IDEs to provide a richer environment for spotting common errors as you type the code.
+Also: Angular is written in TypeScript.
+
+Checking the versions:
+  580  node -v
+  581  npm -v
+  583  npm install -g @angular/cli
+  584  ng -v
+
+
+LTAdmin@LTAdmin-PC MINGW64 /c
+$ npm -version
+5.6.0
+	- > npm install -g typescript
+LTAdmin@LTAdmin-PC MINGW64 /c
+$ npm install -g typescript
+C:\Users\LTAdmin\AppData\Roaming\npm\tsc -> C:\Users\LTAdmin\AppData\Roaming\npm\node_modules\typescript\bin\tsc
+C:\Users\LTAdmin\AppData\Roaming\npm\tsserver -> C:\Users\LTAdmin\AppData\Roaming\npm\node_modules\typescript\bin\tsserver
++ typescript@2.6.2
+added 1 package in 24.035s
+
+- In the directory where you are going to study:
+	- LTAdmin@LTAdmin-PC MINGW64 /e/Typescript/study/Derek_Banas
+	- In order to be able to compile from Typescript to JavaScript:
+		- Type:
+			> touch tstus.ts <enter> # will create the file tstut.ts.
+			> tsc tstut.ts --target ES5 <enter>	# Compatible with all browsers.
+				- This will ensure compatibility with ECMAScript version 5
+				- For the situation of a Typescript file tstut.js.
+				- Do this for every separate TypeScript file (e.g. tstud_Mosh.ts).
+			> tsc *.ts --watch --target ES5 # Will automatically compile all typescript files.
+				- 20:54:39 - Compilation complete. Watching for file changes.
+				- So tsc will now be polling constantly!
+				
+- The variables are typesafe, except for type 'any'
+	If e.g. a number if given to a string an error will be visible in the window in which the tsc watch is active.
+			
+- SublimeText 3 has been used for the TypeScript Tutorials.
+
+Angular courses:
+- Java2Brain: create angular2 project with eclipse IDE
+	- https://www.youtube.com/watch?v=mKwg_9t__Ig
+- Java Sample Approach: How to Integrate Angular 4 with SpringBoot RestAPI using SpringToolSuite
+	- https://www.youtube.com/watch?v=Ps-7ZV8YpI0
+	* Check also the various other video's that also combine Spring Boot with Angular.
+- Traversy Media: Angular 4 In 60 Minutes
+	- https://www.youtube.com/watch?v=KhzGSHNhnbI
+	* Also offers, via Udemy a complete course:
+		- https://www.udemy.com/angular-4-front-to-back/?couponCode=ANGULAR10YT
+			- $14.99
+
+- https://programmingwithmosh.com/
+	- https://codewithmosh.teachable.com/p/angular-master-class/?product_id=421179&coupon_code=HALFOFF
+		- I have a coupon code:
+			- Cost = $ 25,- 
+- https://www.tutorialspoint.com/angular4/angular4_overview.htm
+
+---------------------------------------------------------------------------------------------------
+2018-03-13:
+
+git: https://github.com/robkremers/AngularDevelopment.git
+
+
+
+---------------------------------------------------------------------------------------------------
+2018-03-13:
+
+Installation of Visual Studio Code:
+- https://code.visualstudio.com/docs/setup/windows
+- https://code.visualstudio.com/docs?dv=win
+
+- Execute Automation: Part 1 - Introduction to Typescript fundamentals
+	- https://www.youtube.com/watch?v=bAPJ2W6Fr4Q&list=PL6tu16kXT9Pp6XV3L3lrWideBW6Mcwaa5
+- Execute Automation: Part 2 - Installing and Configuring Typescript with Visual Studio Code
+	- https://www.youtube.com/watch?v=Hs6XWwQUs_A
+		- Configure launch.json, task.json, tsconfig.json
+
+		
+- Zramlez: How to configure VS Code for developing node.js apps using Typescript 2.x
+	- https://www.youtube.com/watch?v=W0pOhHgPsl4
+		- How to run a typescript application:
+			- Compile and change into a javascript file.
+				- Open the terminal: View|Integrate terminal.
+					- Initialize package: > npm init -y # Tells nodejs to create a file package.json containing default values.
+						- Added to package.json:
+							"main": "./lib/app.js", 	# So instead of index.js.
+							  "dependencies": {
+									"typescript": "^2.7.2"
+								  }
+					- Initialize typescript: tsc --init <enter>	# Note that on my laptop Typescript (tsc) has been installed globally.
+						- > Successfully created a tsconfig.json file.
+				- ctrl-shift-b: A command line with options is opened: 
+					- http://www.typescriptlang.org/docs/handbook/tsconfig-json.html
+					- tsc build: tsconfig.json	# this will build.
+					- tsc watch: tsconfig.json 	# this will detect any change and will rebuild.
+												# 18:04:34 - Compilation complete. Watching for file changes.
+						- Now the file tasks.json is created.
+				- Run as follows:
+					> nod ./src/app.js <enter>
+					Starting application...
+			- Alternatively via Debug, creating a launch.json file:
+				- ctrl+alt+D: Debug
+					- Click 'Configure or fix launch.json'
+				- ctrl-F5: execution of the app.
+			- F1: tasks: Configure default build task <enter>
+				- tasks.json is created.
+					- 
+					
+Application:
+./src
+	# Contains the .ts files
+	app.ts
+./lib
+	# Contains the .js files
+	app.js
+./.vscode
+	launch.json	# created as part of Debug.
+	tasks.json	# created via tsc build. Test Typescript that we want to run the app, using tsconfig.json.
+package.json	# created via > npm init -y
+				# Add here dependencies and the main .js file.
+tsconfig.json	# created via > tsc --init
+
+Build via: ctrl+shift+B in the .ts file.
+- tsc build: tsconfig.json	# this will build.
+- tsc watch: tsconfig.json 	# this will detect any change and will rebuild.
+							# 18:04:34 - Compilation complete. Watching for file changes.
+Executed: > node <path>/<main js file> <enter>
+e.g.: > node ./lib/app.js <enter>
+Alternatively via the Debugger.
+
+- In launch.json:
+	- the preLaunchTask is defined: "build"
+		- this refers to the identifier "build" in tasks.json.
+- In tasks.json:
+	- the task with identifier "build" indicates, that we want to build, according to tsconfig.json.
+- in tsconfig.json:
+	- "outDir": "./lib"	/* Redirect output structure to the directory. */
+	- "strict": true
+	# The following is done in order to enable debugging.
+	- "inlineSourceMap": true,  /* Emit a single file with source maps instead of having a separate file. */
+    - "inlineSources": true,    /* Emit the source alongside the sourcemaps within a single file; requires '--inlineSourceMap' or '--sourceMap' to be set. */
+
+- Traversy Media: TypeScript Crash Course
+	- https://www.youtube.com/watch?v=rAy_3SIqT-E

@@ -1,6 +1,6 @@
 class App {
     public start() {
-        console.log("Starting application...");
+        console.log("Starting application...2 + 4");
     }
 }
 
