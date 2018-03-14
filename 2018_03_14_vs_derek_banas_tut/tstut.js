@@ -1,4 +1,14 @@
 "Use strict";
+var __extends = (this && this.__extends) || (function () {
+    var extendStatics = Object.setPrototypeOf ||
+        ({ __proto__: [] } instanceof Array && function (d, b) { d.__proto__ = b; }) ||
+        function (d, b) { for (var p in b) if (b.hasOwnProperty(p)) d[p] = b[p]; };
+    return function (d, b) {
+        extendStatics(d, b);
+        function __() { this.constructor = d; }
+        d.prototype = b === null ? Object.create(b) : (__.prototype = b.prototype, new __());
+    };
+})();
 /*
 Derek Banas: TypeScript Tutorial
 - https://www.youtube.com/watch?v=-PR_XqW9JJU&t=1s
@@ -95,12 +105,12 @@ for (var val in randArray) {
     document.write("randArray[" + val + "] = " + randArray[val] + "</br>");
 }
 /**
- * In cas of a for loop the iteration parameter
+ * In case of a for loop the iteration parameter
  * has to be defined beforehand.
  */
 document.write("Writing the values of the array randArray using a for loop.</br>");
-var i = 0;
-for (i = 0; i < randArray.length; i++) {
+// let i: number = 0;
+for (var i = 0; i < randArray.length; i++) {
     document.write("randArray[" + i + "] = " + randArray[i] + "</br>");
 }
 var strArray = randArray.map(String);
@@ -154,3 +164,106 @@ sumAll(1, 2, 3, 4, 5);
 /*  Arrow / Lambda functions */
 var AddOne = function (x) { return x + 1; };
 document.write("1 + 1 = " + AddOne(1) + "</br>");
+/* Classes. Java-like setup */
+var Animal = /** @class */ (function () {
+    function Animal(name, owner) {
+        this.name = name;
+        this.owner = owner;
+        Animal.numOfAnimals++;
+    }
+    Animal.prototype.ownerInfo = function () {
+        document.write(this.name + " is owned by " + this.owner + "</br>");
+    };
+    Animal.howManyAnimals = function () {
+        return Animal.numOfAnimals;
+    };
+    Object.defineProperty(Animal.prototype, "weight", {
+        get: function () {
+            return this._weight;
+        },
+        set: function (weight) {
+            this._weight = weight;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Animal.numOfAnimals = 0;
+    return Animal;
+}());
+var spot = new Animal("Spot", "Doug");
+spot.ownerInfo();
+spot.weight = 100; // Here the set function is called.
+document.write("Spot's weight is " + spot.weight + "</br>");
+document.write("# of animals is " + Animal.howManyAnimals() + "</br>");
+/* Inheritance */
+var Dog = /** @class */ (function (_super) {
+    __extends(Dog, _super);
+    function Dog(name, owner) {
+        var _this = _super.call(this, name, owner) || this;
+        Dog.numOfAnimals++;
+        Dog.numOfDogs++;
+        return _this;
+    }
+    Dog.howManyDogs = function () {
+        return Dog.numOfDogs;
+    };
+    Dog.numOfDogs = 0;
+    return Dog;
+}(Animal));
+var grover = new Dog("Grover", "Jimmy");
+document.write("After the declaration of Grover: <br />");
+document.write("# of Animals : " + Animal.howManyAnimals() + "<br />");
+document.write("# of Dogs being Animals : " + Dog.howManyAnimals() + "<br />");
+document.write("# of Dogs : " + Dog.howManyDogs() + "<br />");
+document.write("Is a Dog an Animal: " + (grover instanceof Animal) + "<br />");
+// Checking whether a field exists.
+document.write("Does grover have a name : " + ('name' in grover) + "<br />");
+// A class must implement all methods defined in an interface, like in Java.
+var Car = /** @class */ (function () {
+    // In Typescript only one constructor is possible.
+    // Therefore make the parameters optional in order to allow for multiple situations.
+    function Car(wheels) {
+        this._wheels = 0;
+        this._wheels = wheels;
+    }
+    Object.defineProperty(Car.prototype, "wheels", {
+        get: function () {
+            return this._wheels;
+        },
+        set: function (wheels) {
+            this._wheels = wheels;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Car.prototype.drive = function () {
+        document.write("The car drives with " + this.wheels + "</br>");
+    };
+    return Car;
+}());
+var Bicycle = /** @class */ (function () {
+    // In Typescript only one constructor is possible.
+    // Therefore make the parameters optional in order to allow for multiple situations.
+    function Bicycle(wheels) {
+        this._wheels = 0;
+        this._wheels = wheels;
+    }
+    Object.defineProperty(Bicycle.prototype, "wheels", {
+        get: function () {
+            return this._wheels;
+        },
+        set: function (wheels) {
+            this._wheels = wheels;
+        },
+        enumerable: true,
+        configurable: true
+    });
+    Bicycle.prototype.drive = function () {
+        document.write("The bicycle drives with " + this.wheels + "</br>");
+    };
+    return Bicycle;
+}());
+var car = new Car(4);
+var bicycle = new Bicycle(2);
+car.drive();
+bicycle.drive();

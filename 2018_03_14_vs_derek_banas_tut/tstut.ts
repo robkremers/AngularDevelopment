@@ -110,19 +110,19 @@ if (true) {
 document.write("sampVar = " + sampVar + "</br>");
 
 /* Loops */
-let randArray = [5, 6, 7, 8];
+var randArray = [5, 6, 7, 8];
 document.write("Writing the values of the array randArray.</br>");
 for(var val in randArray) {
     document.write("randArray[" + val + "] = " + randArray[val] + "</br>");
 }
 
 /**
- * In cas of a for loop the iteration parameter 
+ * In case of a for loop the iteration parameter 
  * has to be defined beforehand.
  */
 document.write("Writing the values of the array randArray using a for loop.</br>");
-let i: number = 0;
-for(i = 0; i < randArray.length; i++) {
+// let i: number = 0;
+for(let i: number = 0; i < randArray.length; i++) {
     document.write("randArray[" + i + "] = " + randArray[i] + "</br>");
 }
 
@@ -186,4 +186,125 @@ sumAll(1, 2, 3, 4, 5);
 var AddOne = (x) => x + 1;
 document.write("1 + 1 = " + AddOne(1) + "</br>");
 
-// Continue tomorrow: 26:34 / 49:20.
+/* Classes. Java-like setup */
+
+class Animal {
+
+    private _weight: number;
+    public favFood: string;
+
+    static numOfAnimals: number = 0;
+
+    constructor( private name: string
+               , private owner: string) {
+                   Animal.numOfAnimals++;
+    }
+
+    ownerInfo() {
+        document.write( this.name + " is owned by " + this.owner + "</br>");
+    }
+
+    static howManyAnimals(): number {
+        return Animal.numOfAnimals;
+    }
+
+    get weight(): number {
+        return this._weight;
+    }
+
+    set weight(weight: number) {
+        this._weight = weight;
+    }
+
+}
+
+var spot = new Animal("Spot", "Doug");
+spot.ownerInfo();
+spot.weight = 100; // Here the set function is called.
+
+document.write("Spot's weight is " + spot.weight + "</br>");
+document.write("# of animals is " + Animal.howManyAnimals() + "</br>");
+
+/* Inheritance */
+
+class Dog extends Animal {
+
+    static numOfDogs: number = 0;
+
+    constructor(name: string, owner: string) {
+        super(name, owner);
+        Dog.numOfAnimals++;
+        Dog.numOfDogs++;
+    }
+
+    static howManyDogs() {
+        return Dog.numOfDogs;
+    }
+}
+
+var grover = new Dog("Grover", "Jimmy");
+document.write("After the declaration of Grover: <br />");
+document.write("# of Animals : " + Animal.howManyAnimals() + "<br />");
+document.write("# of Dogs being Animals : " + Dog.howManyAnimals() + "<br />");
+document.write("# of Dogs : " + Dog.howManyDogs() + "<br />");
+document.write("Is a Dog an Animal: " + ( grover instanceof Animal) +"<br />");
+// Checking whether a field exists.
+document.write("Does grover have a name : " + ('name' in grover) + "<br />");
+
+/* Inheritance Part 2. */
+
+interface Vehicle {
+    drive(): any;
+}
+
+// A class must implement all methods defined in an interface, like in Java.
+class Car implements Vehicle {
+
+    private _wheels: number = 0;
+
+    // In Typescript only one constructor is possible.
+    // Therefore make the parameters optional in order to allow for multiple situations.
+    constructor(wheels: number) {
+        this._wheels = wheels;
+    }
+
+    get wheels(): number {
+        return this._wheels;
+    }
+    set wheels(wheels: number) {
+        this._wheels = wheels;
+    }
+
+    drive(): void {
+        document.write("The car drives with " + this.wheels + "</br>");
+    }
+}
+
+class Bicycle implements Vehicle {
+
+    private _wheels: number = 0;
+
+    // In Typescript only one constructor is possible.
+    // Therefore make the parameters optional in order to allow for multiple situations.
+    constructor(wheels: number) {
+        this._wheels = wheels;
+    }
+
+    get wheels(): number {
+        return this._wheels;
+    }
+    set wheels(wheels: number) {
+        this._wheels = wheels;
+    }
+
+    drive(): void {
+        document.write("The bicycle drives with " + this.wheels + "</br>");
+    }
+}
+
+var car = new Car(4);
+var bicycle = new Bicycle(2);
+car.drive();
+bicycle.drive();
+
+// Continue here tomorrow: 
