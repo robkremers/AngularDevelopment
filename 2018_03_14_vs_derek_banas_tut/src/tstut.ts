@@ -28,6 +28,14 @@ Support me on Patreon : https://www.patreon.com/derekbanas
 47:37 Spread Operator
 
 In this tutorial we'll explore everything you'd learn in a standard 200 page book on TypeScript. I'll cover installation, data types, changing the browser, arrays, math, looping, functions, classes, interfaces, inheritance, generic functions, generic classes, destructoring, template strings, spread operator, and many other topics.
+
+2018-03-15: do not run this via the commandline (node ./lib/tstut.js)
+or va ctrl-F5 (Debug)
+This typescript / javascript contains html related code
+that only executes correctly in a browser.
+
+I have only added everything to excercise adding Debug
+and automating build.
 */
 
 /*
@@ -42,7 +50,16 @@ var canVote: boolean = true;
 var anything: any = "dog";
 
 anything = 2;
-document.getElementById("tsStuff").innerHTML = "My Name is " + myName;
+/**
+ * Note: 
+ * By using '!' I indicate that this will not be a null reference.
+ * This is a solution to:  error TS2531: Object is possibly 'null'.
+ * 
+ * https://stackoverflow.com/questions/40640663/strictnullchecks-and-getelementbyid/40640854#40640854
+ */
+// var myElement: string | null = document.getElementById("tsStuff")!.innerHTML = "My Name is " + myName;
+var myElement: HTMLElement = document.getElementById("tsStuff")!;
+myElement.innerHTML = "My Name is " + myName;
 
 document.write("myName is a " + typeof(myName) + "</br>");
 document.write("myAge is a " + typeof(myAge) + "</br>");
@@ -183,7 +200,7 @@ sumAll(1, 2, 3, 4, 5);
 
 /*  Arrow / Lambda functions */
 
-var AddOne = (x) => x + 1;
+var AddOne = (x:number) => x + 1;
 document.write("1 + 1 = " + AddOne(1) + "</br>");
 
 /* Classes. Java-like setup */
@@ -307,4 +324,101 @@ var bicycle = new Bicycle(2);
 car.drive();
 bicycle.drive();
 
-// Continue here tomorrow: 
+/* Gneric functions */
+
+function GetType<T>(value: T): string {
+    return typeof(value);
+}
+
+// As noted in the beginning it is not compulsory to declare a parameter with  specific type. In that case the type will be 'any'.
+var aStr = "A String";
+var aNum: number = 0;
+
+document.write("Type of aStr: " + GetType(aStr) + "</br>");
+document.write("Type aNum: " + GetType(aNum) + "</br>");
+
+/**
+ * The real use of generic functions is that this construction allows the use of any class instance that has implemented a specific interface.
+ */
+
+ function getWheels<T extends Vehicle>(vehicle:T) {
+     return vehicle.drive();
+ }
+ getWheels(car);
+ getWheels(bicycle);
+
+ /* Generic Classes */
+
+ /**
+  * In the following is defined:
+  * - A class is using a specific data type T.
+  * - An add method:
+  *     - Input: two parameters of type T.
+  *     - Return: a parameter of type T.
+  */
+ class GenericNumber<T> {
+     add: (value1: T, value2: T) => T;
+ }
+
+ // ---- Number ----
+ var aNumber = new GenericNumber<number>();
+ aNumber.add = function(x, y) { return (x + y); };
+
+ document.write("5 + 4 = " + aNumber.add(5, 4) + "</br>");
+
+ // ---- String ----
+ var aStrNum = new GenericNumber<string>();
+aStrNum.add = function(x, y) {
+    return String(Number(x) + Number(y));
+}
+
+document.write("5 + 6 = " + aStrNum.add("5", "6") + "</br>");
+
+/* Destructoriing */
+
+var randVals = {x: 1, y: 2, z: 3};
+var {x, y, z} = randVals;
+
+document.write("x + y + z = " + x + y + z + "</br>");
+
+// Now the values of the parameters are switched.
+[x, y, z] = [z, y, x];
+document.write("Switch: x + y + z = " + x + y + z + "</br>");
+
+/* Template String */
+var multStr = `I go on for 
+
+many lines </br>`;
+document.write(multStr);
+document.write(`<b>${multStr}</b></br>`);
+
+/**
+ * The Spread operator:
+ * Allows to separate values in an array into attributes in a function.
+ */
+
+ function theSum(x:number, y:number, z:number): void {
+     document.write("Sum: " + (x + y + z) + "</br>");
+ }
+
+ let args = [4, 5, 6];
+
+ /**
+  * Apparently currently the spread operator is not supported.
+  * Though this can be executed outside of Visual Studio Code.
+  * 
+  * See:
+  * https://github.com/Microsoft/TypeScript/issues/14981
+  */
+//  theSum(...args: number[]):void;
+
+ /* Enum types; the value  normally starts at 0. */
+
+ enum Emotion {
+     Happy =1,
+     Sad,
+     Angry
+ }
+
+ var myFeeling = Emotion.Angry;
+ document.write("myFeeling: " + myFeeling + "</br>");
