@@ -422,3 +422,16 @@ document.write(`<b>${multStr}</b></br>`);
 
  var myFeeling = Emotion.Angry;
  document.write("myFeeling: " + myFeeling + "</br>");
+
+
+ /**
+  * Some additional notes, watching Traversy Media.
+  */
+
+  // Definition of an array.
+  let strArr: Array<string>;
+  let boolArr: Array<boolean>;
+
+  strArr = ['hello', 'world'];
+  boolArr = [true, false];
+  
