@@ -21,7 +21,8 @@ Sources:
 	- https://www.youtube.com/watch?v=W0pOhHgPsl4
 - Traversy Media: TypeScript Crash Course
 	- https://www.youtube.com/watch?v=rAy_3SIqT-E
-
+- https://github.com/Microsoft/vscode-tips-and-tricks
+	
 Documentation:
 - http://www.typescriptlang.org/docs/home.html
 
@@ -106,12 +107,28 @@ Installation of Visual Studio Code:
 - https://code.visualstudio.com/docs/setup/windows
 - https://code.visualstudio.com/docs?dv=win
 
+Visual Studio Code: Tips & tricks.
+- https://github.com/Microsoft/vscode-tips-and-tricks
+- Coding Tech: VSCode: 10 Most Useful Tips And Tricks
+	- https://www.youtube.com/watch?v=cVGMldhVRxU&t=6s
+
 - Execute Automation: Part 1 - Introduction to Typescript fundamentals
 	- https://www.youtube.com/watch?v=bAPJ2W6Fr4Q&list=PL6tu16kXT9Pp6XV3L3lrWideBW6Mcwaa5
 - Execute Automation: Part 2 - Installing and Configuring Typescript with Visual Studio Code
 	- https://www.youtube.com/watch?v=Hs6XWwQUs_A
 		- Configure launch.json, task.json, tsconfig.json
 
+User settings:    
+- "terminal.integrated.shell.windows": "C:\\Windows\\SysWOW64\\WindowsPowerShell\\v1.0\\powershell.exe"
+	- This will open Powershell instead of cmd. Is supposed to prevent problems (cmd == 32 bit).
+Also make sure that git/bin is in the Path so you can call bash in the terminal.
+	- Terminal: bash.exe
+	* Mind you: officially one could set bash in "terminal.integrated.shell.windows" but it did not work for me.
+
+2018-03-17:
+After adding some plugins in VSC:
+npm install -g eslint
+npm install -g jshint
 		
 - Zramlez: How to configure VS Code for developing node.js apps using Typescript 2.x
 	- https://www.youtube.com/watch?v=W0pOhHgPsl4
@@ -133,7 +150,7 @@ Installation of Visual Studio Code:
 												# 18:04:34 - Compilation complete. Watching for file changes.
 						- Now the file tasks.json is created.
 				- Run as follows:
-					> nod ./src/app.js <enter>
+					> node ./src/app.js <enter>
 					Starting application...
 			- Alternatively via Debug, creating a launch.json file:
 				- ctrl+alt+D: Debug
@@ -179,3 +196,9 @@ Alternatively via the Debugger.
 
 - Traversy Media: TypeScript Crash Course
 	- https://www.youtube.com/watch?v=rAy_3SIqT-E
+	-	Not as deep as Derek Banas' youtube video.
+	
+- Execute Automation: Part 1 - Introduction to Typescript fundamentals
+	- https://www.youtube.com/watch?v=bAPJ2W6Fr4Q&list=PL6tu16kXT9Pp6XV3L3lrWideBW6Mcwaa5
+		- Description of how to install launch.json, task.json, tsconfig.json.
+		* Tomorrow finish here the standard setup.

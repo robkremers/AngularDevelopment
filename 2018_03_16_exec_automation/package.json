@@ -1,0 +1,15 @@
+{
+  "name": "2018_03_16_exec_automation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./lib/app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "typescript": "^2.7.2"
+  }
+}
