@@ -1,0 +1,847 @@
+Topic	: Angular.js.
+Date	: 2016-06-12.
+
+- Derek Banas:
+	- Angular JS Tutorial (four videos):
+		- https://www.youtube.com/watch?v=OPxeCiy0RdY&list=PLGLfVvz_LVvRo7634CgU8vyD_NPtODwjE
+		
+- Duncan Hunter: Angular2 in 15min
+	- https://www.youtube.com/watch?v=U3qshbC4fLo&t=39s
+
+	Angular courses:
+- Java2Brain: create angular2 project with eclipse IDE
+	- https://www.youtube.com/watch?v=mKwg_9t__Ig
+- Java Sample Approach: How to Integrate Angular 4 with SpringBoot RestAPI using SpringToolSuite
+	- https://www.youtube.com/watch?v=Ps-7ZV8YpI0
+		- http://javasampleapproach.com/java-integration/integrate-angular-4-springboot-web-app-springtoolsuite#I_Technologies
+	* Check also the various other video's that also combine Spring Boot with Angular.
+- Traversy Media: Angular 4 In 60 Minutes
+	- https://www.youtube.com/watch?v=KhzGSHNhnbI
+	* Also offers, via Udemy a complete course:
+		- https://www.udemy.com/angular-4-front-to-back/?couponCode=ANGULAR10YT
+			- $14.99
+- Acedemind: Angular - The Complete Guide
+	- https://www.youtube.com/watch?v=htPYk6QxacQ
+			
+- https://programmingwithmosh.com/
+	- https://codewithmosh.teachable.com/p/angular-master-class/?product_id=421179&coupon_code=HALFOFF
+		- I have a coupon code:
+			- Cost = $ 25,- 
+
+- The Angular site:
+	- https://cli.angular.io/
+	- https://angular.io/
+	- https://angular.io/tutorial
+	- https://github.com/angular/angular-cli/wiki
+	- https://blog.angular.io
+- https://github.com/angular/angular-cli/wiki
+
+- https://mydevgeek.com/angular-4-crud-application-with-spring-boot-rest-service-part-1/
+- https://www.eclipse.org/community/eclipse_newsletter/2017/february/article1.php
+	- Angular IDE for Modern Web in Eclipse
+	
+- Courses:
+	- Angular 5 (formerly Angular 2) - The Complete Guide
+		- https://www.udemy.com/the-complete-guide-to-angular-2/?couponCode=YOUTUBE_NG4
+		- 14.99 euro.
+	- Academind: Angulate - The Complete Guide
+		- https://www.youtube.com/watch?v=htPYk6QxacQ
+	- https://www.tutorialspoint.com/typescript/index.htm
+	- https://www.tutorialspoint.com/angular4/index.htm
+	- Traversy Media: Angular 4 in 60 minutes
+		- https://www.youtube.com/watch?v=KhzGSHNhnbI
+			- Course 14.99
+	- https://programmingwithmosh.com/courses/
+		- The Complete Angular 4 Course: Beginner to Pro
+	- http://javasampleapproach.com/java-integration/integrate-angular-4-springboot-web-app-springtoolsuite#I_Technologies
+		- Additional detailed pages.
+	- https://codecraft.tv/courses/angular/
+	
+Hint:
+- Always keep open:
+	- https://angular.io/api/
+		- The reference for Angular 2+
+	- https://codecraft.tv/courses/angular/
+		- Good explanation; lot's of practical examples.
+
+
+---------------------------------------------------------------------------------------------------
+https://github.com/angular/angular-cli/wiki:
+
+Angular CLI
+Overview
+	The Angular CLI is a tool to initialize, develop, scaffold and maintain Angular applications
+
+Getting Started
+	To install the Angular CLI:
+
+	npm install -g @angular/cli
+
+Generating and serving an Angular project via a development server Create and run a new project:
+
+	ng new my-project
+	cd my-project
+	ng serve
+
+	Navigate to http://localhost:4200/. The app will automatically reload if you change any of the source files.
+
+Bundling
+	All builds make use of bundling, and using the --prod flag in ng build --prod or ng serve --prod will also make use of uglifying and tree-shaking functionality.
+
+Running unit tests
+	ng test
+
+Tests will execute after a build is executed via Karma, and it will automatically watch your files for changes. 
+You can run tests a single time via --watch=false or --single-run.
+
+Running end-to-end tests
+	ng e2e
+Before running the tests make sure you are serving the app via ng serve. End-to-end tests are run via Protractor.
+
+Additional Commands
+	ng new
+	ng serve
+	ng generate
+	ng lint
+	ng test
+	ng e2e
+	ng build
+	ng get/ng set
+	ng doc
+	ng eject
+	ng xi18n
+
+Angular CLI Config Schema
+	Config Schema
+
+	Additional Information
+There are several stories which will walk you through setting up additional aspects of Angular applications.
+
+
+---------------------------------------------------------------------------------------------------
+2018-01-28:
+
+- Traversy Media: Angular 4 In 60 Minutes
+	- https://www.youtube.com/watch?v=KhzGSHNhnbI
+		- 2 Main ways to install:
+			- Angular CLI
+			- Quikstart Seed
+		- Dependencies:
+			- Node.js & NPM
+
+- Java Sample Approach: How to Integrate Angular 4 with SpringBoot RestAPI using SpringToolSuite
+	- https://www.youtube.com/watch?v=Ps-7ZV8YpI0
+	- Content:
+		1. Install Node.js for Angular
+			- https://nodejs.org/en/ (if necessary).
+		2. Install Angular-CLI
+			- npm install -g @angular/cli
+		3. Setup SpringBoot Web server project
+		4. Create Angular 4 client project
+		5. Import Angular4 client project to SpringToolSuite
+		6. Integrate SpringBoot server and Angular 4 client
+		7. Deploy SpringBoot server with Angular4 client
+	- http://javasampleapproach.com/java-integration/integrate-angular-4-springboot-web-app-springtoolsuite#I_Technologies
+	
+	* Run the Angular webapp in Chrome! In IE it will not show the real thing!.
+		
+1. Check the installation:
+LTAdmin@LTAdmin-PC MINGW64 /e/Typescript/Study/Derek_Banas
+	$ tsc --version
+	Version 2.6.2
+
+	LTAdmin@LTAdmin-PC MINGW64 /e/Typescript/Study/Derek_Banas
+	$ npm --version
+	5.6.0
+
+	LTAdmin@LTAdmin-PC MINGW64 /e/Typescript/Study/Derek_Banas
+	$ node -v
+	v9.4.0
+
+	LTAdmin@LTAdmin-PC MINGW64 /e/Typescript/Study/Derek_Banas
+	$ npm -v
+	5.6.0
+
+LTAdmin@LTAdmin-PC MINGW64 /e/Typescript/Study/Derek_Banas
+	$ npm install -g @angular/cli
+	C:\Users\LTAdmin\AppData\Roaming\npm\ng -> C:\Users\LTAdmin\AppData\Roaming\npm\node_modules\@angular\cli\bin\ng
+
+	> node-sass@4.7.2 install C:\Users\LTAdmin\AppData\Roaming\npm\node_modules\@angular\cli\node_modules\node-sass
+	> node scripts/install.js
+
+	Downloading binary from https://github.com/sass/node-sass/releases/download/v4.7.2/win32-x64-59_binding.node
+	Download complete
+	Binary saved to C:\Users\LTAdmin\AppData\Roaming\npm\node_modules\@angular\cli\node_modules\node-sass\vendor\win32-x64-59\binding.node
+	Caching binary to C:\Users\LTAdmin\AppData\Roaming\npm-cache\node-sass\4.7.2\win32-x64-59_binding.node
+
+	> uglifyjs-webpack-plugin@0.4.6 postinstall C:\Users\LTAdmin\AppData\Roaming\npm\node_modules\@angular\cli\node_modules\webpack\node_modules\uglifyjs-webpack-plugin
+	> node lib/post_install.js
+
+
+	> node-sass@4.7.2 postinstall C:\Users\LTAdmin\AppData\Roaming\npm\node_modules\@angular\cli\node_modules\node-sass
+	> node scripts/build.js
+
+	Binary found at C:\Users\LTAdmin\AppData\Roaming\npm\node_modules\@angular\cli\node_modules\node-sass\vendor\win32-x64-59\binding.node
+	Testing binary
+	Binary is fine
+	npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.1.3 (node_modules\@angular\cli\node_modules\fsevents):
+	npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.1.3: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+
+	+ @angular/cli@1.6.6
+	added 1143 packages in 43.215s
+
+- Checking that the installation of Angular CLI was correct:
+LTAdmin@LTAdmin-PC MINGW64 /e/Typescript/Study/Derek_Banas
+	$ ng -v
+	_                      _                 ____ _     ___
+	/ \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
+	/ △ \ | '_ \ / _` | | | | |/ _` | '__|   | |   | |    | |
+	/ ___ \| | | | (_| | |_| | | (_| | |      | |___| |___ | |
+	/_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|
+	|___/
+
+	Angular CLI: 1.6.6
+	Node: 9.4.0
+	OS: win32 x64
+	Angular:
+	...
+
+3. Create a Spring Boot REST application.
+	E:\JavaDevelopment\WebServiceWorkspace\ProjectSpringBootRESTforAngular
+	Works:
+	IE: http://localhost:1115/HelloWorld/api/hi
+	GET: Hello World!
+	
+4. Create Angular 4 client project
+
+Note:
+My bad: it should have been at the same level as the Spring Boot project.
+
+	Go to: E:\JavaDevelopment\WebServiceWorkspace\ProjectSpringBootRESTforAngular
+	– Start a new angular 4 project by commandline: ng new angular4-client:
+		- Via Eclipse:
+			> npm install@angular/cli@1.6.7
+			> ng new angular4-client --directory ./ --skip-git
+			> npm install --save-dev angular-ide
+	
+	LTAdmin@LTAdmin-PC MINGW64 /e/JavaDevelopment/WebServiceWorkspace
+	$ cd ProjectSpringBootRESTforAngular
+
+	LTAdmin@LTAdmin-PC MINGW64 /e/JavaDevelopment/WebServiceWorkspace/ProjectSpringBootRESTforAngular
+	$ ng new angular4-client
+	  create angular4-client/e2e/app.e2e-spec.ts (297 bytes)
+	  create angular4-client/e2e/app.po.ts (208 bytes)
+	  create angular4-client/e2e/tsconfig.e2e.json (235 bytes)
+	  create angular4-client/karma.conf.js (923 bytes)
+	  create angular4-client/package.json (1299 bytes)
+	  create angular4-client/protractor.conf.js (722 bytes)
+	  create angular4-client/README.md (1030 bytes)
+	  create angular4-client/tsconfig.json (363 bytes)
+	  create angular4-client/tslint.json (3012 bytes)
+	  create angular4-client/.angular-cli.json (1250 bytes)
+	  create angular4-client/.editorconfig (245 bytes)
+	  create angular4-client/.gitignore (529 bytes)
+	  create angular4-client/src/assets/.gitkeep (0 bytes)
+	  create angular4-client/src/environments/environment.prod.ts (51 bytes)
+	  create angular4-client/src/environments/environment.ts (387 bytes)
+	  create angular4-client/src/favicon.ico (5430 bytes)
+	  create angular4-client/src/index.html (301 bytes)
+	  create angular4-client/src/main.ts (370 bytes)
+	  create angular4-client/src/polyfills.ts (2405 bytes)
+	  create angular4-client/src/styles.css (80 bytes)
+	  create angular4-client/src/test.ts (642 bytes)
+	  create angular4-client/src/tsconfig.app.json (211 bytes)
+	  create angular4-client/src/tsconfig.spec.json (283 bytes)
+	  create angular4-client/src/typings.d.ts (104 bytes)
+	  create angular4-client/src/app/app.module.ts (316 bytes)
+	  create angular4-client/src/app/app.component.html (1141 bytes)
+	  create angular4-client/src/app/app.component.spec.ts (986 bytes)
+	  create angular4-client/src/app/app.component.ts (207 bytes)
+	  create angular4-client/src/app/app.component.css (0 bytes)
+	Installing packages for tooling via npm.
+	npm WARN deprecated nodemailer@2.7.2: All versions below 4.0.1 of Nodemailer are deprecated. See https://nodemailer.com/status/
+	npm WARN deprecated node-uuid@1.4.8: Use uuid module instead
+
+	> uws@0.14.5 install E:\JavaDevelopment\WebServiceWorkspace\ProjectSpringBootRESTforAngular\angular4-client\node_modules\uws
+	> node-gyp rebuild > build_log.txt 2>&1 || exit 0
+
+
+	> node-sass@4.7.2 install E:\JavaDevelopment\WebServiceWorkspace\ProjectSpringBootRESTforAngular\angular4-client\node_modules\node-sass
+	> node scripts/install.js
+
+	Cached binary found at C:\Users\LTAdmin\AppData\Roaming\npm-cache\node-sass\4.7.2\win32-x64-59_binding.node
+
+	> uglifyjs-webpack-plugin@0.4.6 postinstall E:\JavaDevelopment\WebServiceWorkspace\ProjectSpringBootRESTforAngular\angular4-client\node_modules\webpack\node_modules\uglifyjs-webpack-plugin
+	> node lib/post_install.js
+
+
+	> node-sass@4.7.2 postinstall E:\JavaDevelopment\WebServiceWorkspace\ProjectSpringBootRESTforAngular\angular4-client\node_modules\node-sass
+	> node scripts/build.js
+
+	Binary found at E:\JavaDevelopment\WebServiceWorkspace\ProjectSpringBootRESTforAngular\angular4-client\node_modules\node-sass\vendor\win32-x64-59\binding.node
+	Testing binary
+	Binary is fine
+	npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.1.3 (node_modules\fsevents):
+	npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.1.3: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+
+	added 1457 packages in 128.19s
+	Installed packages for tooling via npm.
+	Successfully initialized git.
+	Project 'angular4-client' successfully created.
+
+To check angular version, go to angular4-client folder, type: ng -v:
+
+LTAdmin@LTAdmin-PC MINGW64 /e/JavaDevelopment/WebServiceWorkspace/ProjectSpringBootRESTforAngular
+$ cd angular4-client/
+
+	LTAdmin@LTAdmin-PC MINGW64 /e/JavaDevelopment/WebServiceWorkspace/ProjectSpringBootRESTforAngular/angular4-client (master)
+	$ ng -v
+	_                      _                 ____ _     ___
+	/ \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
+	/ △ \ | '_ \ / _` | | | | |/ _` | '__|   | |   | |    | |
+	/ ___ \| | | | (_| | |_| | | (_| | |      | |___| |___ | |
+	/_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|
+	|___/
+
+	Angular CLI: 1.6.6
+	Node: 9.4.0
+	OS: win32 x64
+	Angular: 5.2.2
+	... animations, common, compiler, compiler-cli, core, forms
+	... http, language-service, platform-browser
+	... platform-browser-dynamic, router
+
+	@angular/cli: 1.6.6
+	@angular-devkit/build-optimizer: 0.0.42
+	@angular-devkit/core: 0.0.29
+	@angular-devkit/schematics: 0.0.52
+	@ngtools/json-schema: 1.1.0
+	@ngtools/webpack: 1.9.6
+	@schematics/angular: 0.1.17
+	typescript: 2.5.3
+	webpack: 3.10.0
+
+Start angular4-client project by cmd npm start, results:
+
+	LTAdmin@LTAdmin-PC MINGW64 /e/JavaDevelopment/WebServiceWorkspace/ProjectSpringBootRESTforAngular/angular4-client (master)
+	$ npm start
+
+	> angular4-client@0.0.0 start E:\JavaDevelopment\WebServiceWorkspace\ProjectSpringBootRESTforAngular\angular4-client
+	> ng serve
+
+	** NG Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+	Date: 2018-01-29T15:16:23.569Z
+	Hash: 53f00fecb2598387c99c
+	Time: 7616ms
+	chunk {inline} inline.bundle.js (inline) 5.79 kB [entry] [rendered]
+	chunk {main} main.bundle.js (main) 20.6 kB [initial] [rendered]
+	chunk {polyfills} polyfills.bundle.js (polyfills) 565 kB [initial] [rendered]
+	chunk {styles} styles.bundle.js (styles) 34.5 kB [initial] [rendered]
+	chunk {vendor} vendor.bundle.js (vendor) 7.42 MB [initial] [rendered]
+
+	webpack: Compiled successfully.
+
+Check that the web page is working:
+	IE: http://localhost:4200/
+		--> Works!
+		
+5. Import Angular4 client project to SpringToolSuite
+Open SpringToolSuite, go to Import -> General -> Projects from Folder or Archieve, press Next:
+
+To clean the sourcecode in STS, we need to remove node_modules by following the steps:
+– Right click on angular4-client project, choose Properties, then choose: Resource -> Resource Filter.
+– Press Add Filter…, choose Filter Type: Exclude all, Applies to: Files and folders, and check All children (recursive), with File and Folder Atributes, we specify node_modules:
+
+-> Now node_modules is already removed from the SpringToolSuite.
+
+t’s ready to modify something with Angular4-client project:
+– Open /src/app/app.component.ts, edit:
+
+	export class AppComponent {
+	  title = 'JavasampleApproach HelloWord Angular4 App';
+	}
+	
+– Open src/app/app.component.css, add:
+
+	h1 {
+	  color: blue;
+	  font-size: 150%;
+	}
+
+Now, start angular4-client project with STS:
+– Go to Window -> Show View -> Other, search and choose Terminal.
+– Then launch a Local Terminal, cd to C:\Users\User\workspace\angular4-client. Press command npm start to launch the angular4-client, results:
+
+	/e/JavaDevelopment/WebServiceWorkspace/ProjectSpringBootRESTforAngular/angular4-client (master)
+	$ npm start
+
+	> angular4-client@0.0.0 start E:\JavaDevelopment\WebServiceWorkspace\ProjectSpringBootRESTforAngular\angular4-client
+	> ng serve
+
+	** NG Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+	Date: 2018-01-29T15:41:28.914Z
+	Hash: 328977e03ae7f8f9e85b
+	Time: 7036ms
+	chunk {inline} inline.bundle.js (inline) 5.79 kB [entry] [rendered]
+	chunk {main} main.bundle.js (main) 20.9 kB [initial] [rendered]
+	chunk {polyfills} polyfills.bundle.js (polyfills) 565 kB [initial] [rendered]
+	chunk {styles} styles.bundle.js (styles) 34.5 kB [initial] [rendered]
+	chunk {vendor} vendor.bundle.js (vendor) 7.42 MB [initial] [rendered]
+
+	webpack: Compiled successfully.
+	
+
+6. Integrate SpringBoot server and Angular 4 client
+
+	Up to now, Angular4-Client and SpringBoot server work independently on ports 8080 and 4200.
+	Goal of below integration: the client at 4200 will proxy any /api requests to the server.
+
+Step to do:
+– Create a file proxy.conf.json under project angular4-client folder with content:
+
+	{
+		"/api": {
+			"target": "http://localhost:1115/HelloWorld",
+			"secure": false
+		}
+	}
+
+	Note:
+	If instead I type: "/HelloWorld/api" the effect will be that the RESTful api will not be read.
+	
+- Edit package.json file for “start” script:
+	- Change:
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build --prod",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
+  }
+  
+  to
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build --proxy-config proxy.conf.json",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
+  }
+  
+- Start the Spring Boot application: Run as Spring Boot app.
+- Compile and start the Angular client in the terminal:
+	
+	/e/JavaDevelopment/WebServiceWorkspace/ProjectSpringBootRESTforAngular/angular4-client (master)
+	$ npm start
+
+	> angular4-client@0.0.0 start E:\JavaDevelopment\WebServiceWorkspace\ProjectSpringBootRESTforAngular\angular4-client
+	> ng serve --proxy-config proxy.conf.json
+
+	** NG Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+	Date: 2018-01-29T21:49:45.647Z
+	Hash: 471dafa96cfcd063d92c
+	Time: 9831ms
+	chunk {inline} inline.bundle.js (inline) 5.79 kB [entry] [rendered]
+	chunk {main} main.bundle.js (main) 18.3 kB [initial] [rendered]
+	chunk {polyfills} polyfills.bundle.js (polyfills) 565 kB [initial] [rendered]
+	chunk {styles} styles.bundle.js (styles) 34.5 kB [initial] [rendered]
+	chunk {vendor} vendor.bundle.js (vendor) 7.42 MB [initial] [rendered]
+
+	webpack: Compiled successfully.
+	
+***************************************************************************************************
+Result:
+- http://localhost:1115/HelloWorld/api/hi
+	--> Hello World from Restful API!
+- http://localhost:4200/
+	--> The standard web page:
+		JavasampleApproach HelloWord Angular4 App!
+		Test on update nr 2.
+- http://localhost:4200/api/hi
+	--> Hello World from Restful API!
+		--> The GET message from the RESTful app is shown on the web page.
+
+***************************************************************************************************
+
+
+7. Deploy SpringBoot server with Angular4 client
+
+- Build angular4 client with command ng build --env=prod
+
+	/e/JavaDevelopment/WebServiceWorkspace/ProjectSpringBootRESTforAngular
+	$ cd angular4-client/
+
+	/e/JavaDevelopment/WebServiceWorkspace/ProjectSpringBootRESTforAngular/angular4-client (master)
+	$ ng build -prod
+	Or:
+	$ ng build --env=prod
+	
+	Date: 2018-01-29T22:01:18.240Z
+	Hash: f2d652ea64ad3085707b
+	Time: 26477ms
+	chunk {0} polyfills.f20484b2fa4642e0dca8.bundle.js (polyfills) 59.4 kB [initial] [rendered]
+	chunk {1} main.f30e280853e735a1e2b0.bundle.js (main) 150 kB [initial] [rendered]
+	chunk {2} styles.9c0ad738f18adc3d19ed.bundle.css (styles) 79 bytes [initial] [rendered]
+	chunk {3} inline.f0dae0d745ff37883fc7.bundle.js (inline) 1.45 kB [entry] [rendered]
+
+- The result is a ./dist folder under ./angular4-client.
+
+We have 2 approaches to deployment Spring Boot server with angular4 client:
+– Manually copy all files from dist folder to /src/main/resources/static folder of SpringBoot server project.
+– Using Maven plugin to copy all files from dist folder to /src/main/resources/static folder of SpringBoot server project.
+
+	<plugin>
+	<artifactId>maven-resources-plugin</artifactId>
+	<executions>
+		  <execution>
+			  <id>copy-resources</id>
+			  <phase>validate</phase>
+			  <goals><goal>copy-resources</goal></goals>
+			  <configuration>
+				  <outputDirectory>${basedir}/target/classes/static/</outputDirectory >
+				  <resources>
+					  <resource>
+						  <directory>${basedir}/../angular4-client/dist</directory >
+					  </resource>
+				  </resources>
+			  </configuration>
+		  </execution>
+	</executions>
+	</plugin>
+	
+ERROR] Failed to execute goal org.apache.maven.plugins:maven-clean-plugin:2.6.1:clean (default-clean) on project ProjectSpringBootRESTforAngular: Failed to clean project: Failed to delete E:\JavaDevelopment\We
+bServiceWorkspace\ProjectSpringBootRESTforAngular\target\maven-status\maven-compiler-plugin -> [Help 1]
+
+https://vaadin.com/blog/comparing-polymer-and-angular-from-a-developer-s-perspective
+
+	There is also a Chrome plugin for debugging Angular apps called Augury that allows you to inspect the hierarchy and status of your components. I did not find the plugin to be very useful in pinpointing issues. Most often, debugging the Angular app boiled down to a series of console.log statements. Error messages in the browser console were cryptic, and stack traces rarely include identifiable code, only Angular internal calls. 
+
+---------------------------------------------------------------------------------------------------
+2018-01-30:
+
+Series of Angular implementations:
+- http://javasampleapproach.com/tool/setup-angular-ide-spring-tool-suite
+
+Background:
+- https://cli.angular.io/
+	- https://github.com/angular/angular-cli/wiki
+		- Details regarding setup, running, etc.
+
+- http://javasampleapproach.com/frontend/angular/create-new-angular-4-component-multiple-components
+
+What is Component?
+	-> Component is a basic building block of Angular Application. It allows us to mark a logic class, and additional metadata for processing at runtime. Components have a template (in above code is ‘./app.component.html‘) and only one component can be instantiated per an element in a template.
+	A component must belong to an NgModule. So you should declare it in a NgModule:
+
+	...
+	@NgModule({
+	  declarations: [
+		AppComponent,
+		CustomerDetailsComponent
+	  ],
+	  ...
+	  providers: [],
+	  bootstrap: [AppComponent]
+	})
+	...
+
+What is bootstrap: [AppComponent]?
+	– bootstrap Component is the main view of Angular application and is used for hosting others views. It is also called the root component. bootstrap Component should be only set in the root module.
+
+
+---------------------------------------------------------------------------------------------------
+2018-02-02:
+
+- Duncan Hunter: Angular2 in 15min
+	- https://www.youtube.com/watch?v=U3qshbC4fLo&t=39s
+
+Angular 2+:
+- 8 main parts
+	1. Module
+		- HTML Template
+		- Property Binding
+		- Metadata
+		- Event Binding
+		- Component
+	2. Directives
+	3. Dependency Injection
+	4. Services
+	
+			Module:
+							HTML Template			<---- Directives
+							
+				Property		Metadata	Event Binding
+				Binding
+Dependency 
+Injection
+
+Services		----->		Component	
+
+A component can contain other components: in this way a Component Tree is started.
+(Components in components, in components, etc.)
+
+The video content is implemented in:
+Eclipse:
+- Create new Angular project:
+	- angular4BasicWebApp
+
+- https://dzone.com/articles/creating-your-first-angular-4-app-using-angular-id-1
+	- Creating the application vehicles in angular4BasicWebApp.
+
+
+---------------------------------------------------------------------------------------------------
+2018-02-03:
+
+- Academind: Angular - The Complete Guide ( 2 hours).
+	- https://www.youtube.com/watch?v=htPYk6QxacQ
+	
+Creating an Angular project from the command line:
+> npm install -g @angular/cli
+> ng new my-dream-app
+> cd my-dream-app
+> ng serve
+
+npm == Node Package Manager.
+
+For problems regarding Angular API:
+- https://angular.io/api
+
+The following is an example of a simple standalone control using ngModel:
+
+content_copy
+import {Component} from '@angular/core';
+
+@Component({
+  selector: 'example-app',
+  template: `
+    <input [(ngModel)]="name" #ctrl="ngModel" required>
+
+    <p>Value: {{ name }}</p>
+    <p>Valid: {{ ctrl.valid }}</p>
+    
+    <button (click)="setValue()">Set value</button>
+  `,
+})
+export class SimpleNgModelComp {
+  name: string = '';
+
+  setValue() { this.name = 'Nancy'; }
+}
+
+The use of bootstrap:
+You may need to use bootstrap.
+Bootstrap informs which components the application should be aware of during startup.
+To download bootstrap:
+
+http://colinstodd.com/blog/post/how-to-install-bootstrap-4-beta-in-angular-4-as-a-dependency
+
+First install:
+> npm install jquery@1.9.1 --save <enter>
+> npm install popper.js@^1.12.9 --save <enter>
+
+Then install:
+> npm install --save bootstrap <enter>
+
+3. Open up your angular-cli.json file and add the style and scripts:
+
+"styles": [
+        "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+        "styles.css"
+      ],
+      "scripts": [
+        "../node_modules/jquery/jquery.min.js",
+        "../node_modules/popper.js/dist/umd/popper.min.js",
+        "../node_modules/bootstrap/dist/js/bootstrap.min.js"
+      ],
+
+Check in the Chrome html:
+- Developer Tools:
+	- Elements
+		- header:
+			- style (the first one): bootstrap has been added.
+	- Console:
+		[CodeLive] HTTP detected: Connecting using WS
+		core.js:3675 Angular is running in the development mode. Call enableProdMode() to enable the production mode.
+		VM3090:109 [CodeLive] Connected to CodeLive at ws://127.0.0.1:58017/ngcl/
+
+- Angular.ide in Eclipse uses standard naming for the files and in the content.
+
+- New components have to be made known in app.module.ts and the selector / tag has to be used in app.component.html.
+
+- Nesting:
+	- Components:
+		- server
+		- servers
+	- The new components have been made known in app.module.ts
+	- The selector <app-servers> is used in index.html
+		- The selector <app-server> is used in server.component.html
+--> This is an example of nesting of components.
+
+Working with Component Templates.
+- So instead of using the external template file (.html) one can also use the inline template file (.ts) to add html code.
+	e.g. servers.component.ts:
+		- instead of templateUrl use template.
+			- See: https://angular.io/api/core/Component
+			- property template or templateUrl (one of them) is the only property that is required.
+			- See for detail of use: servers.component.ts.
+			- Inline templates should be reserved for just a few lines of codes. Otherwise it'll soon become a mess.
+				- My view: always use external templates for the sake of clarity.
+
+Lecture 17: Working with Component Styles.
+- The new content app.component.html stems from Bootstrap.
+	- I need to learn how to work with Bootstrap.
+
+- Styles can, like the template, be set internally:
+	- use 'styles' instead of 'styleUrls'.
+	- Again: for the sake of clarity use the external styles.
+	
+Lecture 18: Component Selectors.
+
+Lecture 19: Data Binding.
+- Databinding = Communication.
+
+Four forms:
+
+TypeScript Code (Business Logic)	== Output Data ==> 				Template (html)
+									- String Interpolation	: {{ data }}
+									- Property Binding		:  [property] = "data"
+									
+									<== React to (User) Events ==
+									- Event Binding			: (event) = "expression"
+									
+									- Combination of both: Two-Way-Binding: [(ngModel)] = "data" 
+									
+Lecture 21: Property Binding.
+
+	See the use of servers.component.ts: allowNewServer.
+
+Lecture 22: Property Binding vs String Interpolation.
+
+	file servers.component.html:
+		<button class="btn btn-primary" [disabled]="!allowNewServer">Add Server</button>
+		
+		<!-- String Interpolation-->
+		<p>String Interpolation: {{ allowNewServer }}</p>
+		<!-- Property Binding -->
+		<p [innerHTML]="allowNewServer">Property Binding</p>
+		<!-- 
+			As visible on the web page: 'Property Binding is not visible.  
+			So use String Interpolation if the property value is part of a sentence. Otherwise use Property Binding.
+			
+			Also:
+			String Interpolation only works in a normal template. Not within another expression.
+			So e.g. 
+			<p [innerHTML]="{{ allowNewServer }}">Property Binding</p>
+			is not correct.
+		-->
+
+Lecture 23: Event Binding.
+
+Lecture 25: Two-Way-Binding.
+	- See servers.component.html for details.
+	
+Lecture 26: Combining all Forms of DataBinding.
+
+Lecture 27: Understanding Directives.
+
+	Directives are instructions in the DOM.
+	- Components are a form of Directives: it instructs the html to function in a certain way.
+	- There are also Directives without a template.
+		e.g. <p appTurnGreen>Receives a green background!</p>
+		 @Directive({
+			selector: '[appTurnGreen]'
+		 })
+		export class TurngGreenDirective {
+			....
+		}
+
+Lecture 28: *ngIf
+
+	Introduction of the *ngIf Directive: will make the use if an if-statement possible.
+	
+Lecture 29: Addition of an else statment by using ng-template.
+
+Lecture 30: ngStyle.
+
+	Unlike structural directives , attribute directives don't add or remove elements.
+	They only change the element they were placed on.
+
+	See for details: server.component.ts and .html for an implementation.
+
+Lecture 31: ngClass.
+
+Lecture 32: *ngFor.
+
+---------------------------------------------------------------------------------------------------
+2018-02-05:
+
+Study:
+- SambaMedia: Angular-4 with Spring boot Rest CRUD operations
+	- Professional dealing with a CRUD consumer in Angular 4.
+!!!
+
+---------------------------------------------------------------------------------------------------
+2018-03-17:
+
+- Academind: Angular - The Complete Guide to Angular (currently vs. 5).
+	- https://github.com/angular/angular-cli/wiki
+
+Course 4: CLI Deep Dive & Troubleshooting:
+- Install npm
+	npm install -g npm
+- Install Angular.
+	npm install -g @angular/cli
+
+Course 5: Building a new Angular application.
+> ng new my-dream-app
+> cd my-dream-app
+> ng serve				# This will build our source code.
+
+
+Documentation:
+https://cli.angular.io/
+
+LTAdmin@LTAdmin-PC MINGW64 /e/AngularDevelopment (master)
+$ cd course-first-app/
+
+LTAdmin@LTAdmin-PC MINGW64 /e/AngularDevelopment/course-first-app (master)
+$ ls -la
+total 711
+drwxr-xr-x 1 LTAdmin 197121      0 Mar 17 23:01 ./
+drwxr-xr-x 1 LTAdmin 197121      0 Mar 17 22:59 ../
+-rw-r--r-- 1 LTAdmin 197121   1251 Mar 17 22:59 .angular-cli.json
+-rw-r--r-- 1 LTAdmin 197121    245 Mar 17 22:59 .editorconfig
+-rw-r--r-- 1 LTAdmin 197121    544 Mar 17 22:59 .gitignore
+drwxr-xr-x 1 LTAdmin 197121      0 Mar 17 22:59 e2e/
+-rw-r--r-- 1 LTAdmin 197121    923 Mar 17 22:59 karma.conf.js
+drwxr-xr-x 1 LTAdmin 197121      0 Mar 17 23:01 node_modules/
+-rw-r--r-- 1 LTAdmin 197121   1301 Mar 17 22:59 package.json
+-rw-r--r-- 1 LTAdmin 197121 424269 Mar 17 23:01 package-lock.json
+-rw-r--r-- 1 LTAdmin 197121    722 Mar 17 22:59 protractor.conf.js
+-rw-r--r-- 1 LTAdmin 197121   1030 Mar 17 22:59 README.md
+drwxr-xr-x 1 LTAdmin 197121      0 Mar 17 22:59 src/
+-rw-r--r-- 1 LTAdmin 197121    363 Mar 17 22:59 tsconfig.json
+-rw-r--r-- 1 LTAdmin 197121   3012 Mar 17 22:59 tslint.json
+
+LTAdmin@LTAdmin-PC MINGW64 /e/AngularDevelopment/course-first-app (master)
+$ ng serve
+** NG Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+Date: 2018-03-17T22:02:23.422Z
+Hash: dd37e57e22c11b722efe
+Time: 7643ms
+chunk {inline} inline.bundle.js (inline) 3.85 kB [entry] [rendered]
+chunk {main} main.bundle.js (main) 18 kB [initial] [rendered]
+chunk {polyfills} polyfills.bundle.js (polyfills) 549 kB [initial] [rendered]
+chunk {styles} styles.bundle.js (styles) 41.5 kB [initial] [rendered]
+chunk {vendor} vendor.bundle.js (vendor) 7.42 MB [initial] [rendered]
+
+webpack: Compiled successfully.
+
+In IE: http://localhost:4200/
+	- Works but nothing is visible.
+In Chrome: 
+	- Works as intended.
+
+

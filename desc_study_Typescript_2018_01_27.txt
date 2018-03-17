@@ -35,6 +35,9 @@ Software:
 		- Installed: c:\mean\node.js
 - https://www.typescriptlang.org
 
+- Install node.js using node-v9.4.0-x64.msi.
+- npm install -g npm
+
 		
 TypeScript is a superset of JavaScript which primarily provides optional static typing, classes and interfaces. One of the big benefits is to enable IDEs to provide a richer environment for spotting common errors as you type the code.
 Also: Angular is written in TypeScript.
@@ -132,6 +135,8 @@ npm install -g jshint
 		
 - Zramlez: How to configure VS Code for developing node.js apps using Typescript 2.x
 	- https://www.youtube.com/watch?v=W0pOhHgPsl4
+		- Go to the base directory of the project.
+			- code . <enter> # This will start VSC based on the directory.
 		- How to run a typescript application:
 			- Compile and change into a javascript file.
 				- Open the terminal: View|Integrate terminal.
