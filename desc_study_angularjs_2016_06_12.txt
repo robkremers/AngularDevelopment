@@ -616,7 +616,7 @@ import {Component} from '@angular/core';
 @Component({
   selector: 'example-app',
   template: `
-    <input [(ngModel)]="name" #ctrl="ngModel" required>
+    <input type="text" [(ngModel)]="name" #ctrl="ngModel" required>
 
     <p>Value: {{ name }}</p>
     <p>Valid: {{ ctrl.valid }}</p>
@@ -839,9 +839,61 @@ chunk {vendor} vendor.bundle.js (vendor) 7.42 MB [initial] [rendered]
 
 webpack: Compiled successfully.
 
+Lecture 7. First Angular App.
+
 In IE: http://localhost:4200/
 	- Works but nothing is visible.
 In Chrome: 
 	- Works as intended.
+
+After starting VSC:
+- Open terminal:
+	> ng serve	# Will start the application. Any saved change in the app will be visible immediately.
+
+Lecture 7. Course Structure.
+- Getting Started
+- The Basics
+- Components and Databinding.
+- Directives.
+- Services and Dependency Injection.
+- Routing.
+- Observables.
+- Forms.
+- Pipes.
+- HTTP (CRUD).
+- Authentication.
+- Optimizations and NgModules.
+- Deployment.
+- Animations and Testing.
+
+Lecture 8. How to get the Most out of the Course.
+- Watch the videos.
+- Do the Assignments.
+- Do the Course Project.
+- Ask in Q&A, ask AND answer!
+
+Lecture 9. What is Typescript?
+
+Lecture 11. Must Read: Use Bootstrap 3 instead of 4.
+Lecture 11. A Basic Project Setup using Bootstrap for Styling.
+- Installation of Bootstrap; the CSS framework.
+- Execute the following in the root directory of the project:
+	> npm install --save bootstrap@3
+	- Bootstrap should now be available in sub directory ng_modules.
+- Start the project
+	> ng serve
+- Add to .angular-cli.json
+	"styles": [
+        "../node_modules/bootstrap/dist/css/bootstrap.min.css",	# Add this.
+        "styles.css"
+      ],
+	- Look at the header styles section: Bootstrap v3.3.7 should be visible.
+
+Lecture 12. Where to find the Course Source Code.
+- E:\AngularDevelopment\Documentation\Academind.
+	- first-app.zip
+	- project-template.zip.
+
+Lecture 14: How an Angular App gets Loaded and Started.
 
 
