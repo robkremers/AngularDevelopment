@@ -31,6 +31,7 @@ Date	: 2016-06-12.
 - The Angular site:
 	- https://cli.angular.io/
 	- https://angular.io/
+	- https://angular.io/guide/styleguide
 	- https://angular.io/tutorial
 	- https://github.com/angular/angular-cli/wiki
 	- https://blog.angular.io
@@ -76,6 +77,15 @@ Getting Started
 	To install the Angular CLI:
 
 	npm install -g @angular/cli
+	
+How to upgrade the CLI
+-----------------------
+
+Run the below commands - only use "sudo" on Mac/ Linux.
+
+sudo npm uninstall -g angular-cli @angular/cli
+npm cache clean --force
+sudo npm install -g @angular/cli
 
 Generating and serving an Angular project via a development server Create and run a new project:
 
@@ -644,6 +654,9 @@ First install:
 Then install:
 > npm install --save bootstrap <enter>
 
+Note:
+	2018-03-18: This is not necessary for Bootstrap@3.
+
 3. Open up your angular-cli.json file and add the style and scripts:
 
 "styles": [
@@ -895,5 +908,333 @@ Lecture 12. Where to find the Course Source Code.
 	- project-template.zip.
 
 Lecture 14: How an Angular App gets Loaded and Started.
+
+	The main html page, index.html, has a custom component: app-root.
+
+	This is a component. The selector 'app-root' is defined in app.component.ts. -->
+	  <app-root>Loading...</app-root>
+	  
+	This is defined in app.component.ts:
+	@Component({
+	  selector: 'app-root',
+	  templateUrl: './app.component.html',
+	  styleUrls: ['./app.component.css']
+	})
+	export class AppComponent {
+	  title = 'Angular Study.';
+	  name = '';
+	}
+
+	Page Source:
+	<!doctype html>
+	<html lang="en">
+
+	<head>
+	  <meta charset="utf-8">
+	  <title>CourseFirstApp</title>
+	  <base href="/">
+
+	  <meta name="viewport" content="width=device-width, initial-scale=1">
+	  <link rel="icon" type="image/x-icon" href="favicon.ico">
+	</head>
+
+	<body>
+	  <!-- This is a component. The selector 'app-root' is defined in app.component.ts. -->
+	  <app-root>Loading...</app-root>
+	  <!-- The following libraries ensure that the custom components are loaded and refreshed when changed: -->
+	<script type="text/javascript" src="inline.bundle.js"></script>
+	<script type="text/javascript" src="polyfills.bundle.js">
+	</script><script type="text/javascript" src="styles.bundle.js">
+	</script><script type="text/javascript" src="vendor.bundle.js">
+	</script><script type="text/javascript" src="main.bundle.js"></script></body>
+
+	</html>
+
+	main.ts:
+		//The following bootstraps the app.module:
+
+		import { AppModule } from './app/app.module';
+		platformBrowserDynamic().bootstrapModule(AppModule)
+
+	app.component.ts:
+		// Bootstraps AppComponent.
+		
+	So app-root, defined in app-component.ts, is loaded into index.html, because app.module.ts has been bootstrapped in main.ts.
+
+Lecture 15. Components are important!
+
+	Angular in the end is a JS framework changing your DOM at runtime.
+	The basic idea of Angular is to build components that fill the web page.
+	Each component has it's own:
+	- template
+	- html
+	- style
+	- business logic.
+
+Lecture 16. Creating a new component.
+	
+	- New components will be added to the app.component.html.
+	- New components will be placed under ./src/app/.
+	- A component is a Typescript class.
+	
+Lecture 17. Understanding the role of AppModule and Comp.
+
+	- AppModule: Bundles the functionality of the app.
+	- Register a new component in app.module.ts.
+	- Component html functionality is placed in the component html file: server.component.html.
+	- The server.component.html file will not be called in index.html but in app.component.html.
+	
+Lecture 18. Using Custom Components.
+
+	- The server.component.html file will not be called in index.html but in app.component.html.
+		- e.g.: 
+			- server.component.ts: selector = <app-server>
+			- app.component.html: <app-server></app-server>
+
+Lecture 19. Creating Components with the CLI and Nesting Components.
+
+	- Creation of a sub component.
+		- Can be done manually or
+		- By using CLI:
+			- Create new terminal.
+			> ng generate component <component name>	# or ng g c <component name>
+			> ng generate component servers <enter>
+			
+	- For deleting a component:
+		- Delete the component directory.
+		- Delete from app.module.ts.
+		- Delete the calls of the component.
+
+	- How to use the components multiple times:
+		- Use their selectors multiple times.
+	
+Lecture 20. Working with Component Templates.
+
+	- You can also create html inline, i.e. not in the html file but in the ts file.
+		- e.g. in servers.component.ts:
+			- @Component:
+				- template:
+					- Can point to an html file or
+					- Can contain itself html.
+	- This worked in Eclipse / Angular.ide but not in VSC.
+
+Lecture 21. Working with Component Styles.
+	- See Lecture 11: installing Bootstrap.
+	- In angular-cli.json:
+		      "styles": [
+        "../node_modules/bootstrap/dist/css/bootstrap.min.css",
+        "styles.css"
+      ],
+	- One can work with css files or again add the css styling to as an inline to the ts file.
+		But for me this will become awkward coding.
+
+Lecture 22. Fully understanding the Component Selector.
+
+	- Until now the Component Selector was defined and used as a custom html tag.
+		@Component({
+		  selector: 'app-servers',
+		  templateUrl: './servers.component.html',
+		  styleUrls: ['./servers.component.css']
+		})		
+		And used as such:
+	    <div>
+            <app-servers></app-servers>
+        </div>
+	
+	- It can also be defined to be used as a parameter:
+		@Component({
+		  selector: '[app-servers]',
+		  templateUrl: './servers.component.html',
+		  styleUrls: ['./servers.component.css']
+		})		
+		And used as such:
+	    <div app-servers> </div>
+	
+		* This is not recommended by the Angular Style Guide: 
+			https://angular.io/guide/styleguide: Style 05-03.
+		* Normally the idea to create your own elements.
+		
+	- It can also be defined to be used as a class:
+		@Component({
+		  selector: './app-servers',
+		  templateUrl: './servers.component.html',
+		  styleUrls: ['./servers.component.css']
+		})		
+		And used as such:
+	    <div class="app-servers"> </div>
+		
+		* This class can now be styled in css.
+		* Again not recommended; not the standard idea which is creating elements.
+		
+Assignment: Practicing Components.
+
+	The video explains the example app you're starting with and which tasks should be completed as part of this assignment.
+
+	Make sure to also answer why you implemented the solution you chose to use.
+
+	Questions for this Assignment
+	Please complete the tasks outlined in the instructions video. Why did you choose the approach you took? Which problems did you encounter?
+
+	Assignment:
+	1. Create two new Components (manually or with CLI): WarningAlert and SuccessAlert.
+	2. Output them beneath each other in the AppComponent.
+	3. Output a warning or success message in the Components.
+	4. Style the Components appropriately (maybe some red / greeen text?).
+	
+	Use external or internal templates and styles.
+	
+	Feel free to create more components, nest them into each other or play around with different types of selectors!
+	
+When trying to install errors occurred as described in the error github repository below.
+- https://github.com/JeremyEnglert/JointsWP/issues/317
+
+  506  npm install
+  507  python -v
+  508  node -v
+  509  npm -v
+  510  npm --add-python-to-path='true' --debug install --global windows-build-tools
+  513  npm install --global node-gyp
+
+I have removed package-lock.json.
+  
+Again:
+LTAdmin@LTAdmin-PC MINGW64 /e/AngularDevelopment/basics-assignment-1-start (master)
+$ npm install
+
+> node-sass@4.7.2 install E:\AngularDevelopment\basics-assignment-1-start\node_modules\node-sass
+> node scripts/install.js
+
+Cached binary found at C:\Users\LTAdmin\AppData\Roaming\npm-cache\node-sass\4.7.2\win32-x64-59_binding.node
+
+> uglifyjs-webpack-plugin@0.4.6 postinstall E:\AngularDevelopment\basics-assignment-1-start\node_modules\webpack\node_modules\uglifyjs-webpack-plugin
+> node lib/post_install.js
+
+
+> node-sass@4.7.2 postinstall E:\AngularDevelopment\basics-assignment-1-start\node_modules\node-sass
+> node scripts/build.js
+
+Binary found at E:\AngularDevelopment\basics-assignment-1-start\node_modules\node-sass\vendor\win32-x64-59\binding.node
+Testing binary
+Binary is fine
+npm notice created a lockfile as package-lock.json. You should commit this file.
+npm WARN codelyzer@3.2.2 requires a peer of @angular/compiler@^2.3.1 || >=4.0.0-beta <5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN codelyzer@3.2.2 requires a peer of @angular/core@^2.3.1 || >=4.0.0-beta <5.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN @schematics/angular@0.1.17 requires a peer of @angular-devkit/core@0.0.29 but none is installed. You must install peer dependencies yourself.
+npm WARN @angular-devkit/schematics@0.0.52 requires a peer of @angular-devkit/core@0.0.29 but none is installed. You must install peer dependencies yourself.
+npm WARN ajv-keywords@3.1.0 requires a peer of ajv@^6.0.0 but none is installed. You must install peer dependencies yourself.
+npm WARN optional SKIPPING OPTIONAL DEPENDENCY: fsevents@1.1.3 (node_modules\fsevents):
+npm WARN notsup SKIPPING OPTIONAL DEPENDENCY: Unsupported platform for fsevents@1.1.3: wanted {"os":"darwin","arch":"any"} (current: {"os":"win32","arch":"x64"})
+
+added 1228 packages from 1163 contributors in 113.863s
+
+Now if I check the angular version:
+LTAdmin@LTAdmin-PC MINGW64 /e/AngularDevelopment/basics-assignment-1-start (master)
+$ ng --version
+Your global Angular CLI version (1.7.3) is greater than your local version (1.5.0). The local Angular CLI version is used.
+
+To disable this warning use "ng set --global warnings.versionMismatch=false".
+module.js:557
+    throw err;
+    ^
+
+Error: Cannot find module '@angular-devkit/core'
+    at Function.Module._resolveFilename (module.js:555:15)
+    at Function.Module._load (module.js:482:25)
+    at Module.require (module.js:604:17)
+    at require (internal/module.js:11:18)
+    at Object.<anonymous> (E:\AngularDevelopment\basics-assignment-1-start\node_modules\@angular-devkit\schematics\src\tree\virtual.js:10:16)
+    at Module._compile (module.js:660:30)
+    at Object.Module._extensions..js (module.js:671:10)
+    at Module.load (module.js:573:32)
+    at tryModuleLoad (module.js:513:12)
+    at Function.Module._load (module.js:505:3)
+	
+Repair as follows:
+	https://stackoverflow.com/questions/44525746/global-angular-cli-version-greater-than-local-version
+	- "npm install --save-dev @angular/cli@latest"
+	
+Globally installed:
+
+LTAdmin@LTAdmin-PC MINGW64 /e
+$ ng version
+_                      _                 ____ _     ___
+/ \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
+/ △ \ | '_ \ / _` | | | | |/ _` | '__|   | |   | |    | |
+/ ___ \| | | | (_| | |_| | | (_| | |      | |___| |___ | |
+/_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|
+|___/
+
+Angular CLI: 1.7.3
+Node: 9.4.0
+OS: win32 x64
+Angular:
+...
+
+So a local ng version is messing it up:
+I'll reinstall and also will do this, if necessary, locally.
+See: how-to-use.txt:
+
+	npm uninstall -g angular-cli @angular/cli
+	npm cache clean --force
+	npm install -g @angular/cli
+
+    npm install --save-dev @angular-devkit/core
+
+Checking which version is being used (this went wrong before reinstalling angular/cli:
+	LTAdmin@LTAdmin-PC MINGW64 /e/AngularDevelopment/basics-assignment-1-start (master)
+	$ ng -v
+	Your global Angular CLI version (1.7.3) is greater than your local
+	version (1.5.0). The local Angular CLI version is used.
+
+	To disable this warning use "ng set --global warnings.versionMismatch=false".
+	_                      _                 ____ _     ___
+	/ \   _ __   __ _ _   _| | __ _ _ __     / ___| |   |_ _|
+	/ △ \ | '_ \ / _` | | | | |/ _` | '__|   | |   | |    | |
+	/ ___ \| | | | (_| | |_| | | (_| | |      | |___| |___ | |
+	/_/   \_\_| |_|\__, |\__,_|_|\__,_|_|       \____|_____|___|
+	|___/
+
+	Angular CLI: 1.5.0
+	Node: 9.4.0
+	OS: win32 x64
+	Angular: 5.2.9
+	... animations, common, compiler, compiler-cli, core, forms
+	... http, language-service, platform-browser
+	... platform-browser-dynamic, router
+
+	@angular/cli: 1.5.0
+	@angular-devkit/build-optimizer: 0.0.42
+	@angular-devkit/core: 0.4.6
+	@angular-devkit/schematics: 0.0.52
+	@ngtools/json-schema: 1.1.0
+	@ngtools/webpack: 1.8.0
+	@schematics/angular: 0.1.17
+	typescript: 2.4.2
+	webpack: 3.8.1
+
+Starting the application:
+	LTAdmin@LTAdmin-PC MINGW64 /e/AngularDevelopment/basics-assignment-1-start (master)
+	$ ng serve
+	Your global Angular CLI version (1.7.3) is greater than your local
+	version (1.5.0). The local Angular CLI version is used.
+
+	To disable this warning use "ng set --global warnings.versionMismatch=false".
+	** NG Live Development Server is listening on localhost:4200, open your browser on http://localhost:4200/ **
+	Date: 2018-03-19T16:29:48.416Z
+	Hash: 4f9f0d3f98c9dbfd561c
+	Time: 8714ms
+	chunk {inline} inline.bundle.js (inline) 5.79 kB [entry] [rendered]
+	chunk {main} main.bundle.js (main) 20 kB [initial] [rendered]
+	chunk {polyfills} polyfills.bundle.js (polyfills) 557 kB [initial] [rendered]
+	chunk {styles} styles.bundle.js (styles) 360 kB [initial] [rendered]
+	chunk {vendor} vendor.bundle.js (vendor) 8.48 MB [initial] [rendered]
+
+	webpack: Compiled successfully.
+
+
+	
+
+Vallentino.sakidin@klm.com
+nabil.talhi@klm.com
 
 

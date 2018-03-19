@@ -3,6 +3,18 @@
     Study of first Angular application.
   </h1>
 </div>
-<input type="text" [(ngModel)]="name">
-<p>{{ name }}</p>
+<h3>Before the Container.</h3>
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+        <h3>App Component</h3>
+        <input type="text" [(ngModel)]="name">
+        <p>{{ name }}</p>
+        <hr>
+        <div>
+            <app-servers></app-servers>
+        </div>
+    </div>
+  </div>
+</div>
 
