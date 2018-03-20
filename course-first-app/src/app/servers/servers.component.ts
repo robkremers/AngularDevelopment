@@ -19,9 +19,19 @@ import { ServerComponent } from '../server/server.component';
 
 export class ServersComponent implements OnInit {
 
-  constructor() { }
+  allowNewServer = false;
+
+  constructor() {
+    setTimeout( () => {
+      this.allowNewServer = true;
+    }, 2000);
+  }
 
   ngOnInit() {
+  }
+
+  getAllowedNewServer() {
+    return this.allowNewServer;
   }
 
 }

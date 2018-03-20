@@ -812,6 +812,9 @@ Course 5: Building a new Angular application.
 > cd my-dream-app
 > ng serve				# This will build our source code.
 
+ng serve --aot --e=prod	# This will build and will prevent that private properties can be used outside their classes.
+						# But this will also let the appliction crash.
+
 
 Documentation:
 https://cli.angular.io/
@@ -1087,7 +1090,7 @@ Assignment: Practicing Components.
 	
 When trying to install errors occurred as described in the error github repository below.
 - https://github.com/JeremyEnglert/JointsWP/issues/317
-
+	- Recommended steps to improve (I had python already installed, using a recent version, so this was not the cause).
   506  npm install
   507  python -v
   508  node -v
@@ -1095,7 +1098,7 @@ When trying to install errors occurred as described in the error github reposito
   510  npm --add-python-to-path='true' --debug install --global windows-build-tools
   513  npm install --global node-gyp
 
-I have removed package-lock.json.
+I have removed package-lock.json. Is re-installed.
   
 Again:
 LTAdmin@LTAdmin-PC MINGW64 /e/AngularDevelopment/basics-assignment-1-start (master)
@@ -1150,6 +1153,7 @@ Error: Cannot find module '@angular-devkit/core'
     at Function.Module._load (module.js:505:3)
 	
 Repair as follows:
+	Google: Your global Angular CLI version (1.7.3) is greater than your local version (1.5.0). The local Angular CLI version is used.
 	https://stackoverflow.com/questions/44525746/global-angular-cli-version-greater-than-local-version
 	- "npm install --save-dev @angular/cli@latest"
 	
@@ -1232,9 +1236,86 @@ Starting the application:
 	webpack: Compiled successfully.
 
 
+Check this tomorrow:
+- https://github.com/robkremers/AngularDevelopment:
 	
+	We found a potential security vulnerability in one of your dependencies.
+	A dependency defined in basics-assignment-1-start/package-lock.json has known security vulnerabilities and should be updated.
 
-Vallentino.sakidin@klm.com
-nabil.talhi@klm.com
+Only the owner of this repository can see this message.
+
+---------------------------------------------------------------------------------------------------
+2018-03-20:
+
+Working on the basic assignment.
+- Install bootstrap:
+	- Root directory:
+		- npm install --save bootstrap@3
+	- Restart:
+		> ng serve
+	* The styles has been updated automatically.
+      "styles": [
+        "../node_modules/bootstrap/dist/css/bootstrap.min.css",	# Added.
+        "styles.css"
+      ],
+
+I have created: 
+- Component success-alert
+- Component warning-alert
+- Added the components to app.component.html.
+- Added buttons that trigger an alert (warning / success).
+
+Reason for doing so:
+- I have chosen the simplest setup to test the nesting of components.
+- I still have a lot to learn about the connection of the components. It's now important to have something at all.
+
+Problems encountered:
+- The build crashed.
+	- Fix as described in: https://github.com/JeremyEnglert/JointsWP/issues/317
+  506  npm install
+  507  python -v
+  508  node -v
+  509  npm -v
+  510  npm --add-python-to-path='true' --debug install --global windows-build-tools
+  513  npm install --global node-gyp
+
+	I have removed package-lock.json. Is re-installed.
+- I received warning that components were not installed.
+- When checking the version an error occurred.
+- See: how-to-use.txt:
+
+	npm uninstall -g angular-cli @angular/cli
+	npm cache clean --force
+	npm install -g @angular/cli
+
+    npm install --save-dev @angular-devkit/core
+	
+- Now the version check is okay.
+- Creating a component with name SuccessAlert does not work, although not producing a clear error.
+	- Eventually I found that a specific style for the name needs to be used: success-alert.
+
+- During the installation I encountered problems connecting the components (e.g. the used names were not correct).
+  This led to error messages that were not immediately understandable.
+ 
+---------------------------------------------------------------------------------------------------
+Lecture 23. What is DataBinding?
+
+	Databinding = Communication
+
+	TypesScript Code (Business Logic)	==> Output Data 			==> Template (HTML).
+	- String Interpolation	: {{ data }}
+	- Property Binding		: [property] = "data"
+
+										<== Reaction to User Events	
+	- Event Binding			: (event) = "expression"
+
+	Combination of both: Two-Way-Binding	: [(ngModel)] = "data"
+
+Lecture 24. String Interpolation.
+
+Lecture 25: Property Binding.
+
+	See the use of servers.component.ts: allowNewServer.
+	
 
 

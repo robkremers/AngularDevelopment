@@ -1,5 +1,7 @@
 <p>
   Servers Component!
 </p>
+<!-- <button class="btn btn-primary" disabled=true>Add Server</button> -->
+<button class="btn btn-primary" [disabled]="!getAllowedNewServer()" >Add Server</button>
 <app-server></app-server>
 <app-server></app-server>

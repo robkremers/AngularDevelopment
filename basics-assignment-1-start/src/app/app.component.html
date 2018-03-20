@@ -1,15 +1,25 @@
+<div style="text-align:center">
+  <h1>
+    Basic Assignment 1: using a Warning Alert and a Success Alert.
+  </h1>
+</div>
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <ol>
-        <li>Create two new Components (manually or with CLI): WarningAlert and SuccessAlert</li>
-        <li>Output them beneath each other in the AppComponent</li>
-        <li>Output a warning or success message in the Components</li>
-        <li>Style the Components appropriately (maybe some red/ green text?)</li>
-      </ol>
-      <p>Use external or internal templates and styles!</p>
-      <p>Feel free to create more components, nest them into each other or play around with different types of selectors!</p>
+      <hr>
+      <h3>App Component</h3>
+      
+        <p><input type="text" [(ngModel)]="name"> {{ name }}</p>
+        <hr>
+        <div>
+            <app-warning-alert></app-warning-alert>
+            <app-success-alert></app-success-alert>
+        </div>
+        <hr>
+        <div ng-controller="AlertCtrl">
+          <h5>Testing alerts</h5>
+          
+        </div>
     </div>
   </div>
 </div>
-
